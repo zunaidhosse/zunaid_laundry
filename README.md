@@ -51,9 +51,9 @@ You need to upload all the project files from your computer to this new reposito
 3.  "Build and deployment" সেকশনের নিচে "Source" এ, ড্রপডাউন থেকে "Deploy from a branch" নির্বাচন করুন।
 4.  "Branch" সেকশনের নিচে, আপনার main branch নির্বাচন করুন (সাধারণত `main` বা `master`)। ফোল্ডার `/ (root)` নির্বাচন করুন এবং "Save" বাটনে ক্লিক করুন।
 
-কিছুক্ষণের মধ্যেই আপনার সাইটটি পাবলিশ হয়ে যাবে। আপনি পেজের উপরে একটি সবুজ বার্তা দেখতে পাবেন যেখানে আপনার লাইভ ওয়েবসাইটের লিঙ্ক দেওয়া থাকবে। লিঙ্কটি সাধারণত এই ফরম্যাটে হবে: `https://your-username.github.io/repository-name/`
+কিছুক্ষণের মধ্যেই আপনার সাইটটি পাবলিশ হয়ে যাবে। আপনি পেজের উপরে একটি সবুজ বার্তা দেখতে পাবেন যেখানে আপনার লাইভ ওয়েবসাইটের লিঙ্ক দেওয়া থাকবে। লিঙ্কটি সাধারণত এই ফরম্যাটে হবে: `https://zunaidhosse.github.io/zunaid_laundry/`
 
-It might take a few minutes for your site to be published. You will see a green message at the top of the page with the link to your live website. The link will typically be in this format: `https://your-username.github.io/repository-name/`
+It might take a few minutes for your site to be published. You will see a green message at the top of the page with the link to your live website. The link will typically be in this format: `https://zunaidhosse.github.io/zunaid_laundry/`
 
 ---
 
