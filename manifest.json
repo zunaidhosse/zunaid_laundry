@@ -1,0 +1,23 @@
+{
+  "name": "Zunaid Laundry",
+  "short_name": "Zunaid Laundry",
+  "description": "A professional mobile laundry service app for Saudi Arabia.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#e0e5ec",
+  "theme_color": "#e0e5ec",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/pwa_icon_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/pwa_icon_512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
+

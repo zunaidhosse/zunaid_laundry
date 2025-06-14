@@ -1,0 +1,184 @@
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title data-translate="appName">Zunaid Laundry</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#e0e5ec"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Zunaid Laundry">
+    <link rel="apple-touch-icon" href="pwa_icon_192.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="app-container">
+        <!-- Header -->
+        <header class="app-header neumorphic">
+            <h1 id="app-title">
+                <img src="icon_header_laundry.png" alt="Laundry Icon" class="header-icon">
+                <span id="app-title-text" data-translate="appName">خدمة غسيل الملابس</span>
+            </h1>
+            <div class="language-switcher">
+                <button id="lang-en" class="neumorphic-button lang-button" data-lang="en">EN</button>
+                <button id="lang-ar" class="neumorphic-button lang-button active" data-lang="ar">AR</button>
+            </div>
+        </header>
+
+        <!-- User Info Screen (First Launch) -->
+        <main id="user-info-screen" class="screen">
+            <div class="screen-header">
+                <h2 data-translate="userInfoTitle">أدخل معلوماتك</h2>
+            </div>
+            <div class="screen-content form-container">
+                <div class="neumorphic-input-inset">
+                    <label for="user-full-name" data-translate="fullNameLabel">الاسم الكامل</label>
+                    <input type="text" id="user-full-name" placeholder="مثال: عبدالله الأحمد" data-translate="fullNamePlaceholder">
+                </div>
+                <div class="neumorphic-input-inset">
+                    <label for="user-phone-number" data-translate="phoneNumberLabel">رقم الهاتف</label>
+                    <input type="tel" id="user-phone-number" placeholder="مثال: 05XXXXXXXX" data-translate="phoneNumberPlaceholder">
+                </div>
+                <button id="save-user-info-btn" class="neumorphic-button large-button">
+                    <span data-translate-inner="saveAndContinue">حفظ ومتابعة</span>
+                </button>
+                <p id="user-info-status" class="status-message"></p>
+            </div>
+        </main>
+
+        <!-- Home Screen -->
+        <main id="home-screen" class="screen active-screen">
+            <div class="screen-content">
+                <button id="install-app-btn" class="neumorphic-button large-button" style="display: none;">
+                    <img src="icon_install.png" alt="" class="button-icon"> <span data-translate-inner="installApp">تثبيت التطبيق</span>
+                </button>
+                <button id="order-now-btn" class="neumorphic-button large-button">
+                    <img src="icon_basket.png" alt="" class="button-icon"> <span data-translate-inner="orderNow">اطلب الآن</span>
+                </button>
+                <button id="my-orders-btn" class="neumorphic-button large-button">
+                    <img src="icon_my_orders.png" alt="" class="button-icon"> <span data-translate-inner="myOrders">طلباتي</span>
+                </button>
+                <button id="track-order-btn" class="neumorphic-button large-button">
+                    <img src="icon_truck.png" alt="" class="button-icon"> <span data-translate-inner="track">تتبع</span>
+                </button>
+                <button id="support-btn" class="neumorphic-button large-button">
+                     <img src="icon_support.png" alt="" class="button-icon"> <span data-translate-inner="support">الدعم</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Item Selection Screen -->
+        <main id="item-selection-screen" class="screen">
+            <div class="screen-header">
+                <button id="back-to-home-btn" class="neumorphic-button back-button" data-translate="back">رجوع</button>
+                <h2 data-translate="selectItems">اختر الأصناف</h2>
+            </div>
+            <div id="item-list" class="item-list-container">
+                <!-- Items will be populated by JS -->
+            </div>
+            <div class="screen-footer">
+                <button id="proceed-to-order-btn" class="neumorphic-button large-button">
+                    <span data-translate-inner="proceedToOrder">المتابعة للطلب</span> <span id="total-items-count">(0)</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- Order Screen -->
+        <main id="order-screen" class="screen">
+            <div class="screen-header">
+                <button id="back-to-items-btn" class="neumorphic-button back-button" data-translate="back">رجوع</button>
+                <h2 data-translate="orderDetails">تفاصيل الطلب</h2>
+            </div>
+            <div class="form-container">
+                <div class="neumorphic-input-inset">
+                    <label for="customer-name" data-translate="name">الاسم</label>
+                    <input type="text" id="customer-name" placeholder="ادخل اسمك" data-translate="namePlaceholder">
+                </div>
+                <div class="neumorphic-input-inset">
+                    <label for="customer-phone" data-translate="phone">رقم الهاتف</label>
+                    <input type="tel" id="customer-phone" placeholder="مثال: 05XXXXXXXX" data-translate="phonePlaceholder">
+                </div>
+                <div class="neumorphic-input-inset">
+                    <label for="customer-address" data-translate="address">العنوان</label>
+                    <input type="text" id="customer-address" placeholder="سيتم ملؤه تلقائيًا أو ادخل يدويًا" data-translate="addressPlaceholder">
+                </div>
+                <button id="detect-location-btn" class="neumorphic-button">
+                    <img src="icon_location.png" alt="" class="button-icon"> <span data-translate="detectLocation">تحديد موقعي</span>
+                </button>
+                <p id="location-status" class="location-status-text"></p>
+
+                <div class="neumorphic-input-inset">
+                    <label for="pickup-time" data-translate="pickupTimeLabel">وقت الاستلام</label>
+                    <select id="pickup-time" class="neumorphic-select">
+                        <!-- Options will be populated by JS -->
+                    </select>
+                </div>
+
+                <button id="send-whatsapp-order-btn" class="neumorphic-button large-button">
+                    <img src="icon_whatsapp.png" alt="" class="button-icon"> <span data-translate="sendOrderViaWhatsApp">إرسال الطلب عبر الواتساب</span>
+                </button>
+            </div>
+        </main>
+
+        <!-- My Orders Screen -->
+        <main id="my-orders-screen" class="screen">
+            <div class="screen-header">
+                <button id="back-to-home-from-orders-btn" class="neumorphic-button back-button" data-translate="back">رجوع</button>
+                <h2 data-translate="myOrdersScreenTitle">طلباتي السابقة</h2>
+            </div>
+            <div id="order-history-list-container" class="order-history-container">
+                <!-- Orders will be populated by JS -->
+            </div>
+            <p id="no-orders-message" class="no-orders-text" data-translate="noOrdersYet" style="display: none;">ليس لديك طلبات سابقة.</p>
+        </main>
+
+        <!-- Confirmation Popup/Screen -->
+        <div id="confirmation-popup" class="popup-overlay" style="display: none;">
+            <div class="neumorphic popup-content">
+                <h3 data-translate="orderSent">تم إرسال طلبك!</h3>
+                <p><span data-translate="orderIDLabel">Order ID:</span> <strong id="popup-order-id"></strong></p>
+                <p><span data-translate="pickupTimeLabel">Pickup Time:</span> <strong id="popup-pickup-time"></strong></p>
+                <p data-translate="thankYouMessage">شكراً لك، تم إرسال طلبك بنجاح.</p>
+                <div id="order-summary-popup" class="order-summary-text"></div>
+                <button id="new-order-btn" class="neumorphic-button" data-translate="newOrder">طلب جديد</button>
+            </div>
+        </div>
+
+        <!-- View Order Details Popup -->
+        <div id="view-order-popup" class="popup-overlay" style="display: none;">
+            <div class="neumorphic popup-content">
+                <h3 data-translate="orderDetails">تفاصيل الطلب</h3>
+                <p><span data-translate="orderIDLabel">Order ID:</span> <strong id="view-popup-order-id"></strong></p>
+                <p><span data-translate="name">Name:</span> <strong id="view-popup-name"></strong></p>
+                <p><span data-translate="phone">Phone:</span> <strong id="view-popup-phone"></strong></p>
+                <p><span data-translate="address">Address:</span> <strong id="view-popup-location"></strong></p>
+                <p><span data-translate="pickupTimeLabel">Pickup Time:</span> <strong id="view-popup-pickup-time"></strong></p>
+                <p><span data-translate="date">Date:</span> <strong id="view-popup-date"></strong></p>
+                <div id="view-order-summary-popup" class="order-summary-text"></div>
+                <button id="close-view-order-popup-btn" class="neumorphic-button" data-translate="close">إغلاق</button>
+            </div>
+        </div>
+    </div>
+
+    <script type="importmap">
+    {
+        "imports": {
+            "./config.js": "./config.js",
+            "./translations.js": "./translations.js",
+            "./state.js": "./state.js",
+            "./dom.js": "./dom.js",
+            "./ui.js": "./ui.js",
+            "./events.js": "./events.js",
+            "./main.js": "./main.js"
+        }
+    }
+    </script>
+    <script type="module" src="script.js"></script>
+    <div id="offline-toast" class="toast">
+        <span data-translate-inner="offlineReady"></span>
+    </div>
+</body>
+</html>
